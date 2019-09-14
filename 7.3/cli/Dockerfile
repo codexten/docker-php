@@ -17,3 +17,5 @@ RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-di
 RUN usermod -u 1000 www-data
 VOLUME /root/.composer
 RUN composer global require hirak/prestissimo
+
+CMD tail -f /dev/null
