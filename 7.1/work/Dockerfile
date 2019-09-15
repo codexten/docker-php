@@ -1,4 +1,4 @@
-FROM codexten/php-fpm:7.1-prod
+FROM codexten/php-fpm:7.1
 
 RUN usermod -u 1000 www-data
 RUN  apt-get -yq update && \
