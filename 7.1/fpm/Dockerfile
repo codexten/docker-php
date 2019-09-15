@@ -13,5 +13,7 @@ RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-di
 VOLUME /root/.composer
 RUN composer global require hirak/prestissimo
 
+RUN  apt-get -yq update && \
+     apt-get -yqq install ssh
      
 CMD tail -f /dev/null
