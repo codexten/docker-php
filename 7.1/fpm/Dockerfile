@@ -40,8 +40,6 @@ RUN \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-COPY ./php.ini /usr/local/etc/php/
-
 RUN apt-get purge -y g++ \
     && apt-get autoremove -y \
 #    && rm -r /var/lib/apt/lists/* \
