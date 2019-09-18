@@ -63,6 +63,16 @@ RUN docker-php-ext-install pcntl
 
 RUN apt-get update -yq \
     && apt-get install curl gnupg -yq 
+    
+VOLUME /en
+
+ENV user www-data
+RUN mkdir en
+RUN chown -R ${user} /projects
+RUN chown -R ${user} /en
+RUN chown -R ${user} /var/www
+
+USER ${user}
 
 
 WORKDIR /projects
