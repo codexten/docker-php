@@ -16,4 +16,16 @@ RUN composer global require hirak/prestissimo
 RUN  apt-get -yq update && \
      apt-get -yqq install ssh
      
-CMD tail -f /dev/null
+VOLUME /en
+VOLUME /projects
+VOLUME /var/www
+
+ENV user www-data
+RUN mkdir en
+RUN chown -R ${user} /projects
+RUN chown -R ${user} /en
+RUN chown -R ${user} /var/www
+
+USER ${user}
+
+CMD php-fpm && tail -f /dev/null

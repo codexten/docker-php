@@ -1,1 +1,0 @@
-FROM codexten/php:7.3-cli
