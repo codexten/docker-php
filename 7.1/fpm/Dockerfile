@@ -65,6 +65,8 @@ RUN apt-get update -yq \
     && apt-get install curl gnupg -yq 
     
 VOLUME /en
+WORKDIR /projects
+VOLUME /var/www
 
 ENV user www-data
 RUN mkdir en
@@ -74,9 +76,6 @@ RUN chown -R ${user} /var/www
 
 USER ${user}
 
-
-WORKDIR /projects
-
 EXPOSE 9000
 
-CMD tail -f /dev/null
+CMD php-fpm && tail -f /dev/null
