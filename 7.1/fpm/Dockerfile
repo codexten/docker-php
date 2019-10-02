@@ -65,7 +65,6 @@ RUN apt-get update -yq \
     && apt-get install curl gnupg -yq 
     
 VOLUME /en
-WORKDIR /projects
 VOLUME /var/www
 
 ENV user www-data
