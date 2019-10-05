@@ -64,15 +64,15 @@ RUN docker-php-ext-install pcntl
 RUN apt-get update -yq \
     && apt-get install curl gnupg -yq 
     
-VOLUME /en
-VOLUME /var/www
+#VOLUME /en
+#VOLUME /var/www
 
-ENV user www-data
-RUN mkdir en
-RUN chown -R ${user} /en
-RUN chown -R ${user} /var/www
+#ENV user www-data
+#RUN mkdir en
+#RUN chown -R ${user} /en
+#RUN chown -R ${user} /var/www
 
-USER ${user}
+#USER ${user}
 
 EXPOSE 9000
 
