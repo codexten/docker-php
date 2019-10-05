@@ -47,7 +47,7 @@ RUN apt-get purge -y g++ \
 
 RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer
 
-RUN usermod -u 1000 www-data
+# RUN usermod -u 1000 www-data
 VOLUME /root/.composer
 
 RUN composer global require hirak/prestissimo
