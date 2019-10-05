@@ -48,9 +48,9 @@ RUN apt-get purge -y g++ \
 RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer
 
 # RUN usermod -u 1000 www-data
-VOLUME /root/.composer
+#VOLUME /root/.composer
 
-RUN composer global require hirak/prestissimo
+#RUN composer global require hirak/prestissimo
 
 #RUN apt-get update && apt-get install -y libxml2-dev \
 #    && pear install -a SOAP-0.13.0 \
